@@ -1,5 +1,23 @@
+# Script for making a backup of a user/organisations Github repos with commit history
+
+This script allows a user to backup repos with commit history from organisations/users and compress them into a single zip archive
+
+# Running the script
+
+Dependancies:
+```
+jq git zip
+```
+1. Replace `<your access token>` with your access token from https://github.com/settings/tokens Token only needs repo and org read permisions.
+2. Replace `<your github user>` with your github user and set `cloneUserRepos=` to `true` if your cloning a users repos or Replace `<Your organiasation>` with a org name and set `cloneOrgRepos=` to `true`. It is possible to set both to `true` this will clone both the user and the orgs repo into seperate folders in a single .zip 
+
+3. Run the script with you might need to set the script to executable with `chmod +x ./cloneall.sh` 
+  ```
+  ./cloneall.sh
+  ```
+
 # Restore a repo from a bundle file 
-Borrowed from https://gist.github.com/xtream1101/fd79f3099f572967605fab24d976b179 
+Restore notes borrowed from https://gist.github.com/xtream1101/fd79f3099f572967605fab24d976b179 
 
 Here we will restore the repo from the bundle and create a new remote origin that will contain all brnaches and tags
 1. Clone the repo from the bundle
